@@ -17,22 +17,19 @@ function Copy-File {
 
 # Desktop app loads plugins from %LOCALAPPDATA%\hermes on Windows.
 Copy-File `
-    (Join-Path $Root "src\desktop-plugin\plugin.js") `
+    (Join-Path $Root "catalog\desktop\plugin.js") `
     (Join-Path $DesktopRoot "desktop-plugins\brain-graph\plugin.js")
 
 # Gateway/API: only if this machine also has a Hermes home.
 if (Test-Path $HermesHome) {
     Copy-File `
-        (Join-Path $Root "src\backend-api\plugin.yaml") `
+        (Join-Path $Root "catalog\plugin.yaml") `
         (Join-Path $HermesHome "plugins\brain-graph\plugin.yaml")
     Copy-File `
-        (Join-Path $Root "src\backend-api\__init__.py") `
-        (Join-Path $HermesHome "plugins\brain-graph\__init__.py")
-    Copy-File `
-        (Join-Path $Root "src\backend-api\manifest.json") `
+        (Join-Path $Root "catalog\dashboard\manifest.json") `
         (Join-Path $HermesHome "plugins\brain-graph\dashboard\manifest.json")
     Copy-File `
-        (Join-Path $Root "src\backend-api\plugin_api.py") `
+        (Join-Path $Root "catalog\dashboard\plugin_api.py") `
         (Join-Path $HermesHome "plugins\brain-graph\dashboard\plugin_api.py")
     $dashInit = Join-Path $HermesHome "plugins\brain-graph\dashboard\__init__.py"
     if (-not (Test-Path (Split-Path $dashInit))) {

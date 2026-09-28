@@ -1,1 +1,0 @@
-"""Brain Graph plugin package."""

@@ -13,7 +13,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.testclient import TestClient
 
 ROOT = Path(__file__).resolve().parents[1]
-API_DIR = ROOT / "src" / "backend-api"
+API_DIR = ROOT / "catalog" / "dashboard"
 if str(API_DIR) not in sys.path:
     sys.path.insert(0, str(API_DIR))
 
@@ -159,7 +159,7 @@ def test_mutations_are_serialized_and_recheck_version_inside_lock():
 
 
 def test_frontend_release_blocker_guards_are_present():
-    source = Path(os.environ.get("BRAIN_UI_PLUGIN", ROOT / "src" / "desktop-plugin" / "plugin.js")).read_text(encoding="utf-8")
+    source = Path(os.environ.get("BRAIN_UI_PLUGIN", ROOT / "catalog" / "desktop" / "plugin.js")).read_text(encoding="utf-8")
     assert "editRevision" in source and "snapshotRevision" in source and "snapshotContent" in source
     assert "kind:'mutationGuard'" in source
     assert "initialRestore" in source and "validTabs" in source

@@ -1,5 +1,5 @@
 import fs from 'node:fs'
-const built=fs.readFileSync(new URL('./plugin.js',import.meta.url),'utf8')
+const built=fs.readFileSync(new URL('../../catalog/desktop/plugin.js',import.meta.url),'utf8')
 const source=fs.readFileSync(new URL('./plugin.src.js',import.meta.url),'utf8')
 const failures=[]
 const has=(name,text,where=source)=>{if(!where.includes(text))failures.push(name)}

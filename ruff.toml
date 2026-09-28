@@ -22,4 +22,4 @@ ignore = [
 # The backend suite is intentionally compact (multiple statements per line).
 "tests/**" = ["E402", "E701", "E702", "E703", "F841"]
 # plugin_api.py is a compact FastAPI plugin; Body(...) defaults are the Hermes pattern.
-"src/backend-api/plugin_api.py" = ["E701", "E702", "E703", "B008", "B904", "B905"]
+"catalog/dashboard/plugin_api.py" = ["E701", "E702", "E703", "B008", "B904", "B905"]

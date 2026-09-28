@@ -102,9 +102,9 @@ Vault       $HERMES_BRAIN_ROOT  (default ~/brain)
 
 | Path | Role |
 |------|------|
-| `src/desktop-plugin/plugin.js` | Desktop UI (loaded as-is; no build step) |
+| `catalog/desktop/plugin.js` | Desktop UI (loaded as-is; no build step) |
 | `src/desktop-plugin/plugin.src.js` | Same UI kept as the editable source |
-| `src/backend-api/` | Dashboard FastAPI plugin (`plugin.yaml`, `manifest.json`, `plugin_api.py`) |
+| `catalog/` | Installable plugin (`plugin.yaml`, `desktop/plugin.js`, `dashboard/`) |
 | `tests/test_plugin_api.py` | Isolated vault tests (no real notes) |
 
 ## Develop
