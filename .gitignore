@@ -10,10 +10,3 @@ venv/
 *.tmp
 *.swp
 .DS_Store
-.venv-dev/
-venv/
-.env
-.env.*
-*.tmp
-*.swp
-.DS_Store
