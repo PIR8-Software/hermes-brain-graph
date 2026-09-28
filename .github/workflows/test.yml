@@ -1,0 +1,25 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - uses: astral-sh/setup-uv@v5
+      - name: lint
+        run: uv run --with-requirements requirements-dev.txt ruff check .
+      - name: pytest
+        run: uv run --with-requirements requirements-dev.txt pytest -q
+      - name: ui regressions
+        run: |
+          node src/desktop-plugin/regression-check.mjs
+          node src/desktop-plugin/zoom-regression.mjs
+          node src/desktop-plugin/component-layout.test.mjs

@@ -1,0 +1,25 @@
+# Ruff gate for the Brain Graph plugin.
+# Run: ruff check .
+line-length = 110
+target-version = "py311"
+exclude = [".venv-dev"]
+
+[lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF", "N"]
+ignore = [
+    "E501",
+    "SIM105",
+    "SIM115",
+    "RUF001",
+    "RUF002",
+    "RUF003",
+    # Plugin package dirs use hyphens (Hermes plugin layout): backend-api.
+    "N999",
+]
+
+[lint.per-file-ignores]
+# Tests bootstrap sys.path before importing the plugin module under test.
+# The backend suite is intentionally compact (multiple statements per line).
+"tests/**" = ["E402", "E701", "E702", "E703", "F841"]
+# plugin_api.py is a compact FastAPI plugin; Body(...) defaults are the Hermes pattern.
+"src/backend-api/plugin_api.py" = ["E701", "E702", "E703", "B008", "B904", "B905"]

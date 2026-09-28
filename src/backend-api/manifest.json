@@ -1,0 +1,7 @@
+{
+  "name": "brain-graph",
+  "label": "Brain Workspace",
+  "description": "Safe Markdown editing, navigation, search, and graph APIs for a local vault",
+  "version": "2.0.0",
+  "api": "plugin_api.py"
+}
