@@ -1,6 +1,6 @@
 name: brain-graph
 manifest_version: 1
-version: "2.0.0"
+version: "2.0.1"
 description: Local Markdown vault for Hermes Desktop — notes, wikilinks, search, recycle bin, and an interactive graph.
 author: PIR8-Software
 license: MIT

@@ -4,7 +4,7 @@ A Hermes Agent plugin for a **local Markdown vault**: edit notes, follow `[[wiki
 
 The plugin never uploads your vault. It reads and writes Markdown files on the machine running the Hermes dashboard.
 
-**Version 2.0.0**
+**Version 2.0.1**
 
 ## Features
 
